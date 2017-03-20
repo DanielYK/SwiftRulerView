@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D1677BA1DE467710017ED30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1677B91DE467710017ED30 /* AppDelegate.swift */; };
+		6D1677BC1DE467710017ED30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1677BB1DE467710017ED30 /* ViewController.swift */; };
+		6D1677BF1DE467710017ED30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1677BD1DE467710017ED30 /* Main.storyboard */; };
+		6D1677C11DE467710017ED30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1677C01DE467710017ED30 /* Assets.xcassets */; };
+		6D1677C41DE467710017ED30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1677C21DE467710017ED30 /* LaunchScreen.storyboard */; };
+		6D1677CF1DE467710017ED30 /* YKScrollRulerSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1677CE1DE467710017ED30 /* YKScrollRulerSwiftTests.swift */; };
+		6D1677DA1DE467710017ED30 /* YKScrollRulerSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1677D91DE467710017ED30 /* YKScrollRulerSwiftUITests.swift */; };
+		6D1677EC1DE46C710017ED30 /* DYScrollRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1677EB1DE46C710017ED30 /* DYScrollRulerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D1677CB1DE467710017ED30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D1677AE1DE467710017ED30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D1677B51DE467710017ED30;
+			remoteInfo = YKScrollRulerSwift;
+		};
+		6D1677D61DE467710017ED30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D1677AE1DE467710017ED30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D1677B51DE467710017ED30;
+			remoteInfo = YKScrollRulerSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D1677B61DE467710017ED30 /* YKScrollRulerSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKScrollRulerSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1677B91DE467710017ED30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D1677BB1DE467710017ED30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D1677BE1DE467710017ED30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D1677C01DE467710017ED30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D1677C31DE467710017ED30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D1677C51DE467710017ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1677CA1DE467710017ED30 /* YKScrollRulerSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKScrollRulerSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1677CE1DE467710017ED30 /* YKScrollRulerSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKScrollRulerSwiftTests.swift; sourceTree = "<group>"; };
+		6D1677D01DE467710017ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1677D51DE467710017ED30 /* YKScrollRulerSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKScrollRulerSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1677D91DE467710017ED30 /* YKScrollRulerSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKScrollRulerSwiftUITests.swift; sourceTree = "<group>"; };
+		6D1677DB1DE467710017ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1677EB1DE46C710017ED30 /* DYScrollRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYScrollRulerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D1677B31DE467710017ED30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677C71DE467710017ED30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677D21DE467710017ED30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D1677AD1DE467710017ED30 = {
+			isa = PBXGroup;
+			children = (
+				6D1677B81DE467710017ED30 /* YKScrollRulerSwift */,
+				6D1677CD1DE467710017ED30 /* YKScrollRulerSwiftTests */,
+				6D1677D81DE467710017ED30 /* YKScrollRulerSwiftUITests */,
+				6D1677B71DE467710017ED30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D1677B71DE467710017ED30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D1677B61DE467710017ED30 /* YKScrollRulerSwift.app */,
+				6D1677CA1DE467710017ED30 /* YKScrollRulerSwiftTests.xctest */,
+				6D1677D51DE467710017ED30 /* YKScrollRulerSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D1677B81DE467710017ED30 /* YKScrollRulerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				6D1677B91DE467710017ED30 /* AppDelegate.swift */,
+				6D1677BB1DE467710017ED30 /* ViewController.swift */,
+				6D1677E81DE46C0A0017ED30 /* DYScorllRuler */,
+				6D1677BD1DE467710017ED30 /* Main.storyboard */,
+				6D1677C01DE467710017ED30 /* Assets.xcassets */,
+				6D1677C21DE467710017ED30 /* LaunchScreen.storyboard */,
+				6D1677C51DE467710017ED30 /* Info.plist */,
+			);
+			path = YKScrollRulerSwift;
+			sourceTree = "<group>";
+		};
+		6D1677CD1DE467710017ED30 /* YKScrollRulerSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D1677CE1DE467710017ED30 /* YKScrollRulerSwiftTests.swift */,
+				6D1677D01DE467710017ED30 /* Info.plist */,
+			);
+			path = YKScrollRulerSwiftTests;
+			sourceTree = "<group>";
+		};
+		6D1677D81DE467710017ED30 /* YKScrollRulerSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D1677D91DE467710017ED30 /* YKScrollRulerSwiftUITests.swift */,
+				6D1677DB1DE467710017ED30 /* Info.plist */,
+			);
+			path = YKScrollRulerSwiftUITests;
+			sourceTree = "<group>";
+		};
+		6D1677E81DE46C0A0017ED30 /* DYScorllRuler */ = {
+			isa = PBXGroup;
+			children = (
+				6D1677EB1DE46C710017ED30 /* DYScrollRulerView.swift */,
+			);
+			path = DYScorllRuler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D1677B51DE467710017ED30 /* YKScrollRulerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1677DE1DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwift" */;
+			buildPhases = (
+				6D1677B21DE467710017ED30 /* Sources */,
+				6D1677B31DE467710017ED30 /* Frameworks */,
+				6D1677B41DE467710017ED30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YKScrollRulerSwift;
+			productName = YKScrollRulerSwift;
+			productReference = 6D1677B61DE467710017ED30 /* YKScrollRulerSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D1677C91DE467710017ED30 /* YKScrollRulerSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1677E11DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwiftTests" */;
+			buildPhases = (
+				6D1677C61DE467710017ED30 /* Sources */,
+				6D1677C71DE467710017ED30 /* Frameworks */,
+				6D1677C81DE467710017ED30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1677CC1DE467710017ED30 /* PBXTargetDependency */,
+			);
+			name = YKScrollRulerSwiftTests;
+			productName = YKScrollRulerSwiftTests;
+			productReference = 6D1677CA1DE467710017ED30 /* YKScrollRulerSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D1677D41DE467710017ED30 /* YKScrollRulerSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1677E41DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwiftUITests" */;
+			buildPhases = (
+				6D1677D11DE467710017ED30 /* Sources */,
+				6D1677D21DE467710017ED30 /* Frameworks */,
+				6D1677D31DE467710017ED30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1677D71DE467710017ED30 /* PBXTargetDependency */,
+			);
+			name = YKScrollRulerSwiftUITests;
+			productName = YKScrollRulerSwiftUITests;
+			productReference = 6D1677D51DE467710017ED30 /* YKScrollRulerSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D1677AE1DE467710017ED30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Daniel Yao";
+				TargetAttributes = {
+					6D1677B51DE467710017ED30 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = C79HGK3MHM;
+						ProvisioningStyle = Automatic;
+					};
+					6D1677C91DE467710017ED30 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = C79HGK3MHM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D1677B51DE467710017ED30;
+					};
+					6D1677D41DE467710017ED30 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = C79HGK3MHM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D1677B51DE467710017ED30;
+					};
+				};
+			};
+			buildConfigurationList = 6D1677B11DE467710017ED30 /* Build configuration list for PBXProject "YKScrollRulerSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D1677AD1DE467710017ED30;
+			productRefGroup = 6D1677B71DE467710017ED30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D1677B51DE467710017ED30 /* YKScrollRulerSwift */,
+				6D1677C91DE467710017ED30 /* YKScrollRulerSwiftTests */,
+				6D1677D41DE467710017ED30 /* YKScrollRulerSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D1677B41DE467710017ED30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1677C41DE467710017ED30 /* LaunchScreen.storyboard in Resources */,
+				6D1677C11DE467710017ED30 /* Assets.xcassets in Resources */,
+				6D1677BF1DE467710017ED30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677C81DE467710017ED30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677D31DE467710017ED30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D1677B21DE467710017ED30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1677BC1DE467710017ED30 /* ViewController.swift in Sources */,
+				6D1677EC1DE46C710017ED30 /* DYScrollRulerView.swift in Sources */,
+				6D1677BA1DE467710017ED30 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677C61DE467710017ED30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1677CF1DE467710017ED30 /* YKScrollRulerSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1677D11DE467710017ED30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D1677DA1DE467710017ED30 /* YKScrollRulerSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D1677CC1DE467710017ED30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D1677B51DE467710017ED30 /* YKScrollRulerSwift */;
+			targetProxy = 6D1677CB1DE467710017ED30 /* PBXContainerItemProxy */;
+		};
+		6D1677D71DE467710017ED30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D1677B51DE467710017ED30 /* YKScrollRulerSwift */;
+			targetProxy = 6D1677D61DE467710017ED30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D1677BD1DE467710017ED30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D1677BE1DE467710017ED30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D1677C21DE467710017ED30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D1677C31DE467710017ED30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D1677DC1DE467710017ED30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D1677DD1DE467710017ED30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D1677DF1DE467710017ED30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6D1677E01DE467710017ED30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6D1677E21DE467710017ED30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKScrollRulerSwift.app/YKScrollRulerSwift";
+			};
+			name = Debug;
+		};
+		6D1677E31DE467710017ED30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKScrollRulerSwift.app/YKScrollRulerSwift";
+			};
+			name = Release;
+		};
+		6D1677E51DE467710017ED30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = YKScrollRulerSwift;
+			};
+			name = Debug;
+		};
+		6D1677E61DE467710017ED30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = C79HGK3MHM;
+				INFOPLIST_FILE = YKScrollRulerSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.YKScrollRulerSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = YKScrollRulerSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D1677B11DE467710017ED30 /* Build configuration list for PBXProject "YKScrollRulerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1677DC1DE467710017ED30 /* Debug */,
+				6D1677DD1DE467710017ED30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D1677DE1DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1677DF1DE467710017ED30 /* Debug */,
+				6D1677E01DE467710017ED30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D1677E11DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1677E21DE467710017ED30 /* Debug */,
+				6D1677E31DE467710017ED30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D1677E41DE467710017ED30 /* Build configuration list for PBXNativeTarget "YKScrollRulerSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1677E51DE467710017ED30 /* Debug */,
+				6D1677E61DE467710017ED30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D1677AE1DE467710017ED30 /* Project object */;
+}
