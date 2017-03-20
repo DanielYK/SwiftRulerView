@@ -1,10 +1,14 @@
 SwiftRulerView
 =
-喜欢的朋友可以下载下来，如果你感觉代码对ni有所帮助，还请在 github 给个 star，非常感谢您的支持！
+喜欢的朋友可以下载下来，如果代码对你有所帮助，还请在 github 给个 star，非常感谢你的支持！
 - 
  * swift版本的滑动标尺 , 之前用OC做了一个版本、最近在研究swift中的drawRect方法，刚好拿来练手 ！
  
-
+ 
+ * 效果图
+ 
+  ![image](https://github.com/DanielYK/SwiftRulerView/blob/master/rulerView.gif)
+ 
  * 使用方法 
 
 <pre><code>
