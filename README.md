@@ -1,6 +1,7 @@
-# SwiftRulerView
+SwiftRulerView
+=
 喜欢的朋友可以下载下来，如果您感觉代码对您有所帮助，还请在 github 给个 star，非常感谢您的支持！
-## 
+- 
  * swift版本的滑动标尺 , 之前用OC做了一个版本、最近在研究swift中的drawRect方法，刚好拿来练手，希望能给大家一点帮助。喜欢的可以给个Star ！
  
 
