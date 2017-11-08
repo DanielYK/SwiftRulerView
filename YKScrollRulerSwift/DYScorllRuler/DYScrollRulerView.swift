@@ -17,6 +17,14 @@ fileprivate let TriangleWidth    = 16
 fileprivate let CollectionHeight = 70
 fileprivate let TextColorWhiteAlpha:CGFloat = 1.0
 
+fileprivate func alerts(vc:UIViewController,str:String){
+    let alert = UIAlertController.init(title: "提醒", message: str, preferredStyle: UIAlertControllerStyle.alert)
+    let action:UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+        
+    })
+    alert.addAction(action)
+    vc.present(alert, animated: true, completion: nil)
+}
 
 /***************DY************分************割************线***********/
 
@@ -76,7 +84,7 @@ class DYRulerView: UIView {
                     numStr = String(format: "%f万%@", num/10000,unit)
                 }
                 print(i,step,minValue)
-                let attribute:Dictionary = [NSFontAttributeName:TextRulerFont,NSForegroundColorAttributeName:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
+                let attribute:Dictionary = [NSAttributedStringKey.font:TextRulerFont,NSAttributedStringKey.foregroundColor:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
                 
                 let width = numStr.boundingRect(
                     with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude),
@@ -113,7 +121,7 @@ class DYHeaderRulerView: UIView {
         if headerMinValue > 1000000 {
             numStr = NSString(format: "%f万%@", headerMinValue/10000,headerUnit)
         }
-        let attribute:Dictionary = [NSFontAttributeName:TextRulerFont,NSForegroundColorAttributeName:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
+        let attribute:Dictionary = [NSAttributedStringKey.font:TextRulerFont,NSAttributedStringKey.foregroundColor:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
         let width = numStr.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions(rawValue: 0), attributes: attribute, context: nil).size.width
         numStr.draw(in: CGRect.init(x: rect.size.width-width/2, y: longLineY+10, width: width, height: 14), withAttributes: attribute)
         context?.addLine(to: CGPoint.init(x: rect.size.width, y: longLineY))
@@ -140,7 +148,7 @@ class DYFooterRulerView: UIView {
         if footerMaxValue > 1000000 {
             numStr = NSString(format: "%f万%@", footerMaxValue/10000,footerUnit)
         }
-        let attribute:Dictionary = [NSFontAttributeName:TextRulerFont,NSForegroundColorAttributeName:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
+        let attribute:Dictionary = [NSAttributedStringKey.font:TextRulerFont,NSAttributedStringKey.foregroundColor:UIColor.init(white: TextColorWhiteAlpha, alpha: 1.0)]
         let width = numStr.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions(rawValue: 0), attributes: attribute, context: nil).size.width
         numStr.draw(in: CGRect.init(x: 0-width/2, y: CGFloat(longLineY+10), width: width, height:CGFloat(14)), withAttributes: attribute)
         context?.addLine(to: CGPoint.init(x: 0, y: longLineY))
@@ -150,7 +158,7 @@ class DYFooterRulerView: UIView {
 
 /***************DY************分************割************线***********/
 
-protocol DYScorllRulerDelegate:NSObjectProtocol {
+protocol DYScrollRulerDelegate:NSObjectProtocol {
     func dyScrollRulerViewValueChange(rulerView:DYScrollRulerView,value:Float)
 }
 class DYScrollRulerView: UIView {
@@ -162,7 +170,7 @@ class DYScrollRulerView: UIView {
         // Drawing code
     }
     */
-    weak var delegate:DYScorllRulerDelegate?
+    weak var delegate:DYScrollRulerDelegate?
     
     var scrollByHand = true
     var triangleColor:UIColor? = nil
@@ -177,12 +185,15 @@ class DYScrollRulerView: UIView {
     var step:Float = 0.0 //间隔值，每两条相隔多少值
     var betweenNum:Int = 0
     
+    var currentVC:UIViewController?
+    
+    
     
     class func rulerViewHeight() -> Int {
         return 40+20+CollectionHeight
     }
     
-    init(frame: CGRect,tminValue:Float,tmaxValue:Float,tstep:Float,tunit:String,tNum:Int) {
+    init(frame: CGRect,tminValue:Float,tmaxValue:Float,tstep:Float,tunit:String,tNum:Int,viewcontroller:UIViewController) {
         super.init(frame: frame)
         minValue    = tminValue
         maxValue    = tmaxValue
@@ -191,7 +202,8 @@ class DYScrollRulerView: UIView {
         stepNum     = Int((tmaxValue - tminValue)/step)/betweenNum
         rulerUnit   = tunit
         bgColor     = UIColor.white
-
+        currentVC   = viewcontroller
+        
         triangleColor = UIColor.orange
         self.backgroundColor    = UIColor.white
         
@@ -199,8 +211,11 @@ class DYScrollRulerView: UIView {
         self.addSubview(self.lazyValueTF)
 
         lazyTriangle.frame      = CGRect.init(x: self.bounds.size.width/2-0.5 - CGFloat(TriangleWidth)/2, y: lazyValueTF.frame.maxY, width: CGFloat(TriangleWidth), height: CGFloat(TriangleWidth))
+        lazyUnitLab.frame       = CGRect.init(x: lazyValueTF.frame.maxX+10, y: lazyValueTF.frame.minY, width: 40, height: 40)
+        lazyOKBtn.frame         = CGRect.init(x: lazyUnitLab.frame.maxX+10, y: lazyValueTF.frame.minY+5, width: 40, height: 30)
         
         self.addSubview(self.lazyUnitLab)
+        self.addSubview(self.lazyOKBtn)
         self.addSubview(self.lazyCollectionView)
         self.addSubview(self.lazyTriangle)
 
@@ -215,12 +230,24 @@ class DYScrollRulerView: UIView {
     lazy var lazyValueTF: UITextField = {[unowned self] in
         let zyValueTF = UITextField()
         zyValueTF.isUserInteractionEnabled  = true
-        zyValueTF.defaultTextAttributes     = [NSFontAttributeName:UIFont.systemFont(ofSize: 19)]
+        zyValueTF.defaultTextAttributes     = [NSAttributedStringKey.font.rawValue:UIFont.systemFont(ofSize: 19)]
         zyValueTF.textAlignment = NSTextAlignment.right
         zyValueTF.delegate      = self
-        zyValueTF.keyboardType  = UIKeyboardType.phonePad
+        zyValueTF.keyboardType  = UIKeyboardType.numbersAndPunctuation
+        zyValueTF.returnKeyType = UIReturnKeyType.done
         
         return zyValueTF
+    }()
+    lazy var lazyOKBtn:UIButton = {
+        let okBtn = UIButton.init(type: UIButtonType.custom)
+        okBtn.setTitle("OK", for: UIControlState.normal)
+        okBtn.setTitleColor(UIColor.init(white: 0.7, alpha: 1.0), for: UIControlState.highlighted)
+        okBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+        okBtn.addTarget(self, action: #selector(DYScrollRulerView.editDone), for: UIControlEvents.touchUpInside)
+        okBtn.backgroundColor = UIColor.gray
+        okBtn.layer.cornerRadius = 5.0
+        
+        return okBtn
     }()
     lazy var lazyUnitLab: UILabel = {
         let zyUnitLab = UILabel()
@@ -266,7 +293,41 @@ class DYScrollRulerView: UIView {
         lazyValueTF.text    = String.init(format: "%.1f", fileRealValue*step+minValue)
         lazyCollectionView.setContentOffset(CGPoint.init(x: Int(realValue)*RulerGap, y: 0), animated: animated)
     }
+    
+    func setDefaultValueAndAnimated(defaultValue:Float,animated:Bool){
+        fileRealValue = defaultValue
+        lazyValueTF.text = String.init(format: "%.1f", defaultValue)
+        lazyCollectionView.setContentOffset(CGPoint.init(x: Int((defaultValue-minValue)/step) * RulerGap, y: 0), animated: animated)
+    }
+    
+    @objc func editDone(){
+        
+        
+        let currentText:NSString = lazyValueTF.text! as NSString
+        if !self.judgeTextsHasWord(texts: currentText as String){
+            alerts(vc: currentVC!, str: "请输入数字")
+            return
+        }
+        lazyValueTF.resignFirstResponder()
 
+        if currentText.floatValue > maxValue{
+            lazyValueTF.text = String.init(format: "%.1f", maxValue)
+            self.perform(#selector(self.didChangeCollectionValue), with: nil, afterDelay: 0)
+        }else if currentText.floatValue <= minValue || currentText.length == 0{
+            lazyValueTF.text = String.init(format: "%.1f", minValue)
+            self.perform(#selector(self.didChangeCollectionValue), with: nil, afterDelay: 1)
+        }else{
+            NSObject.cancelPreviousPerformRequests(withTarget: self)
+            self.perform(#selector(self.didChangeCollectionValue), with: nil, afterDelay: 1)
+        }
+        
+    }
+    
+    func judgeTextsHasWord(texts:String) -> Bool{
+        let scan:Scanner = Scanner.init(string: texts)
+        var value:Float = 0.0
+        return scan.scanFloat(&value) && scan.isAtEnd
+    }
 }
 
 extension DYScrollRulerView:UICollectionViewDataSource{
@@ -312,7 +373,16 @@ extension DYScrollRulerView:UICollectionViewDataSource{
                 rulerView!.betweenNumber     = betweenNum;
                 cell.contentView.addSubview(rulerView!)
             }
-            rulerView!.minValue = step*Float((indexPath.item-1))*Float(betweenNum)
+            
+            if indexPath.item >= 8 && indexPath.item <= 12{
+                rulerView?.backgroundColor = UIColor.green
+            }else if(indexPath.item >= 13 && indexPath.item <= 18){
+                rulerView?.backgroundColor = UIColor.red
+            }else{
+                rulerView?.backgroundColor = UIColor.gray
+            }
+            
+            rulerView!.minValue = step*Float((indexPath.item-1))*Float(betweenNum)+minValue
             rulerView!.maxValue = step*Float(indexPath.item)*Float(betweenNum)
             rulerView!.setNeedsDisplay()
  
@@ -339,7 +409,7 @@ extension DYScrollRulerView:UICollectionViewDelegate{
                 lazyValueTF.text = String.init(format: "%.1f", Float(value)*step+minValue)
             }
         }
-        delegate?.dyScrollRulerViewValueChange(rulerView: self, value: totalValue)
+            delegate?.dyScrollRulerViewValueChange(rulerView: self, value: totalValue)
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
@@ -368,17 +438,8 @@ extension DYScrollRulerView:UICollectionViewDelegateFlowLayout{
     }
 }
 extension DYScrollRulerView:UITextFieldDelegate{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-        let newStr:NSString = (currentText as NSString).replacingCharacters(in: range, with: string) as NSString
-        if newStr.floatValue > maxValue{
-            lazyValueTF.text = String.init(format: ".f", maxValue)
-            self.perform(#selector(self.didChangeCollectionValue), with: nil, afterDelay: 0)
-        }else{
-            NSObject.cancelPreviousPerformRequests(withTarget: self)
-            self.perform(#selector(self.didChangeCollectionValue), with: nil, afterDelay: 1)
-        }
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.editDone()
         return true
     }
 }
